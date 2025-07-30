@@ -17,7 +17,8 @@ while ret:
     if ret:
         cv2.imshow('Video Frame', frame)
         #wait for 30 milliseconds before showing the next frame
-        cv2.waitKey(30)
+        if cv2.waitKey(30) & 0xFF == ord('q'):
+            break
 
 #4. Release the video capture object,memory and close all OpenCV windows       
 video.release()  
